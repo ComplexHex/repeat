@@ -1,0 +1,22 @@
+class ChAaB {
+
+    int a;
+    int b;
+
+    public void change(int a, int b) {
+
+       this.b = a;
+       this.a = b;
+
+       System.out.println(this.a);
+       System.out.println(this.b);
+
+    }
+
+
+    public static void main(String[] args) {
+        ChAaB chAaB = new ChAaB();
+        chAaB.change(10,20);
+
+    }
+}
