@@ -13,8 +13,11 @@ public class MainApp {
 
         }catch (ArrayIndexOutOfBoundsException e){
             e.printStackTrace();
+              System.out.println(3);
         }
-        System.out.println(3);
+        catch (RuntimeException e){
+        e.printStackTrace();}
+        }   
     }
 
 
