@@ -12,6 +12,10 @@ public class MainApp {
             System.out.println(100);
         });
 
+        doSomething(() -> {
+            int n = 5;
+            System.out.println(n*1);
+        });
 
     }
 
