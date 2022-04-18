@@ -14,11 +14,12 @@ public class Cat {
     public Cat() {
     }
 
-    public void publicMeow(){
+    @MyAnno
+    public static void  publicMeow() {
         System.out.println("public Meow");
     }
 
-    private void privateMeow(){
+    private void privateMeow() {
         System.out.println("private Meow");
     }
 

@@ -24,14 +24,14 @@ public class MainApp {
 //        }
 
 
-        Class classCat = Cat.class;
-        System.out.println(classCat.getModifiers());
-        System.out.println(classCat.isEnum());
-
-        Method[] methods = Cat.class.getDeclaredMethods();
-        for (Method m : methods) {
-            System.out.println(m.getName());
-        }
+//        Class classCat = Cat.class;
+//        System.out.println(classCat.getModifiers());
+//        System.out.println(classCat.isEnum());
+//
+//        Method[] methods = Cat.class.getDeclaredMethods();
+//        for (Method m : methods) {
+//            System.out.println(m.getName());
+//        }
 
 //        Cat cat = new Cat(1,2,3);
 //        try {
@@ -46,9 +46,17 @@ public class MainApp {
 //        methods[1].invoke(cat);
 
 
-        int mods = methods[0].getModifiers();
-        System.out.println(Modifier.isPublic(mods));
-        System.out.println(Modifier.isPrivate(mods));
-        System.out.println(Modifier.isFinal(mods));
+//        int mods = methods[0].getModifiers();
+//        System.out.println(Modifier.isPublic(mods));
+//        System.out.println(Modifier.isPrivate(mods));
+//        System.out.println(Modifier.isFinal(mods));
+
+        Class catClass = Cat.class;
+        Method[] methods1 = catClass.getDeclaredMethods();
+        for (Method method : methods1) {
+            if (method.isAnnotationPresent(MyAnno.class)) {
+                method.invoke(null);
+            }
+        }
     }
 }
