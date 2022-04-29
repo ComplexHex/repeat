@@ -20,8 +20,8 @@ public class Test3 {
         list.add(10);
 
         //map method
-//        arr = Arrays.stream(arr).map(a -> a * 2).toArray();
-//        list = list.stream().map(a -> a * 2).collect(Collectors.toList());
+        arr = Arrays.stream(arr).map(a -> a * 2).toArray();
+        list = list.stream().map(a -> a * 2).collect(Collectors.toList());
 
 
 //        arr = Arrays.stream(arr).map(a -> 3).toArray();
