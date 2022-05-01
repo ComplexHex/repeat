@@ -1,15 +1,20 @@
 package com.game.entity;
 
 
-import org.hibernate.annotations.Table;
 
-import javax.persistence.Entity;
+
+import javax.persistence.*;
 import java.util.Date;
 
 
-
+@Entity
+@Table(name = "player")
 public class Player {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     private String name;
     private String title;
     private Race race;
