@@ -1,53 +1,55 @@
 package com.game.entity;
 
-
-
-
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
-
 
 @Entity
 @Table(name = "player")
-public class Player {
+public class Player  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @Column(name = "id")
+    private Long id;
 
+    @Column(name = "name", length = 12)
     private String name;
+
+    @Column(name = "title", length = 30)
     private String title;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "race")
     private Race race;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "profession")
     private Profession profession;
-    private int experience;
-    private int level;
-    private int untilNextLevel;
+
+    @Column(name = "experience")
+    private Integer experience;
+
+    @Column(name = "level")
+    private Integer level;
+
+    @Column(name = "untilNextLevel")
+    private Integer untilNextLevel;
+
+    @Column(name = "birthday")
     private Date birthday;
-    private boolean banned;
+
+    @Column(name = "banned")
+    private Boolean banned;
 
     public Player() {
     }
 
-    public Player(long id, String name, String title, Race race, Profession profession,
-                  int experience, int level, int untilNextLevel, Date birthday, boolean banned) {
-        this.id = id;
-        this.name = name;
-        this.title = title;
-        this.race = race;
-        this.profession = profession;
-        this.experience = experience;
-        this.level = level;
-        this.untilNextLevel = untilNextLevel;
-        this.birthday = birthday;
-        this.banned = banned;
-    }
-
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -83,27 +85,27 @@ public class Player {
         this.profession = profession;
     }
 
-    public int getExperience() {
+    public Integer getExperience() {
         return experience;
     }
 
-    public void setExperience(int experience) {
+    public void setExperience(Integer experience) {
         this.experience = experience;
     }
 
-    public int getLevel() {
+    public Integer getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
+    public void setLevel(Integer level) {
         this.level = level;
     }
 
-    public int getUntilNextLevel() {
+    public Integer getUntilNextLevel() {
         return untilNextLevel;
     }
 
-    public void setUntilNextLevel(int untilNextLevel) {
+    public void setUntilNextLevel(Integer untilNextLevel) {
         this.untilNextLevel = untilNextLevel;
     }
 
@@ -115,11 +117,27 @@ public class Player {
         this.birthday = birthday;
     }
 
-    public boolean isBanned() {
+    public Boolean getBanned() {
         return banned;
     }
 
-    public void setBanned(boolean banned) {
+    public void setBanned(Boolean banned) {
         this.banned = banned;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", title='" + title + '\'' +
+                ", race=" + race +
+                ", profession=" + profession +
+                ", experience=" + experience +
+                ", level=" + level +
+                ", untilNextLevel=" + untilNextLevel +
+                ", birthday=" + birthday +
+                ", banned=" + banned +
+                '}';
     }
 }
