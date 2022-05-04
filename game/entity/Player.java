@@ -1,7 +1,11 @@
 package com.game.entity;
 
+import org.springframework.lang.NonNull;
+
 import javax.persistence.*;
-import java.io.Serializable;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
@@ -13,7 +17,9 @@ public class Player  {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "name", length = 12)
+    @Column(name = "name")
+    @Size(min = 1, max = 12)
+    @NonNull
     private String name;
 
     @Column(name = "title", length = 30)
@@ -27,6 +33,7 @@ public class Player  {
     @Column(name = "profession")
     private Profession profession;
 
+    @Min(0) @Max(10_000_000)
     @Column(name = "experience")
     private Integer experience;
 
@@ -36,7 +43,9 @@ public class Player  {
     @Column(name = "untilNextLevel")
     private Integer untilNextLevel;
 
+
     @Column(name = "birthday")
+    
     private Date birthday;
 
     @Column(name = "banned")

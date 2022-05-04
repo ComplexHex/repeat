@@ -18,17 +18,21 @@ public class PlayersService {
         this.playerRepository = playerRepository;
     }
 
-
     public List<Player> getAllPlayers() {
-        System.out.println(3);
         return playerRepository.findAll();
     }
 
-    public Player getByID(Long id){
+
+
+    public Player getByID(Long id) {
         return playerRepository.getOne(id);
     }
 
-    public void savePlayer(Player player){
+    public void savePlayer(Player player) {
         playerRepository.save(player);
+    }
+
+    public long count(){
+        return  playerRepository.count();
     }
 }
