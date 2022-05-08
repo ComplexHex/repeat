@@ -35,6 +35,7 @@ public class PlayersController {
             @RequestParam(defaultValue = "3") Integer pageSize,
             @RequestParam(defaultValue = "id") String sortBy) {
 // here
+// must be some code
 
         List<Player> list = playersService.getAllPlayers(pageNo, pageSize, sortBy);
         return new ResponseEntity<List<Player>>(list, new HttpHeaders(), HttpStatus.OK);
