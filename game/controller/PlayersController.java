@@ -31,15 +31,34 @@ public class PlayersController {
 
     @GetMapping("")
     public ResponseEntity<List<Player>> getAllPlayer(
-            @RequestParam(defaultValue = "0") Integer pageNo,
+            @RequestParam(required = false, defaultValue = "0") Integer pageNo,
             @RequestParam(defaultValue = "3") Integer pageSize,
-            @RequestParam(defaultValue = "id") String sortBy) {
-// here
-// must be some code
+            @RequestParam (defaultValue = "id" )String sortBy
+//
+//            @RequestParam(defaultValue = "name") String sortByName
+//            @RequestParam(defaultValue = "empty") String sortByExp,
+//            @RequestParam(defaultValue = "empty") String sortByBirth
+
+
+           ) {
+
+//        if (sortBy != null){
+//            sortBy = "id";
+//        }
+//        if (!sortByName.equals("empty")){
+//            sortBy = "name";
+//        }
+
+// Bad request to GET /rest/players?&pageNumber=0&pageSize=3&order=NAME
 
         List<Player> list = playersService.getAllPlayers(pageNo, pageSize, sortBy);
         return new ResponseEntity<List<Player>>(list, new HttpHeaders(), HttpStatus.OK);
     }
+
+//    @GetMapping("")
+//    Page<Player> getPlayers(Pageable pageable) {
+//        return playersService.getAllPlayers(pageable);
+//    }
 
 
     @GetMapping("/count")
