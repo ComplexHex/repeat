@@ -48,10 +48,10 @@ class Test {
     public static void main(String[] args) {
 
         Student student1 = new Student("Ivan", 'm', 22, 3, 8.2);
-        Student student2 = new Student("Iv", 'm', 25, 5, 6.5);
-        Student student3 = new Student("Ana", 'f', 21, 2, 5.8);
-        Student student4 = new Student("Vapi", 'f', 20, 1, 6.3);
-        Student student5 = new Student("Roma", 'm', 223, 4, 7.2);
+        Student student2 = new Student("Eva", 'm', 25, 5, 6.5);
+        Student student3 = new Student("Anтa", 'f', 21, 2, 5.8);
+        Student student4 = new Student("Vaypi", 'f', 20, 1, 6.3);
+        Student student5 = new Student("Roman", 'm', 223, 4, 7.2);
 
         ArrayList<Student> students = new ArrayList<>();
         students.add(student1);
