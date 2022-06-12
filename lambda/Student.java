@@ -26,3 +26,4 @@ public class Student {
                 '}';
     }
 }
+//will write getters & setters
